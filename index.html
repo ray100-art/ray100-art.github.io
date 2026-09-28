@@ -1,596 +1,627 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brian Ndung'u — Software Developer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --navy:    #0B1628;
-            --navy2:   #112240;
-            --navy3:   #1a3a5c;
-            --gold:    #C9A84C;
-            --gold2:   #E8C97A;
-            --white:   #F5F0E8;
-            --muted:   #8892A4;
-            --border:  rgba(201,168,76,0.2);
-            --text:    #CCD6F6;
-        }
-        * { margin:0; padding:0; box-sizing:border-box; }
-        html { scroll-behavior:smooth; }
-        body { background:var(--navy); color:var(--text); font-family:'Lato',sans-serif; overflow-x:hidden; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brian Ndung'u · Software Engineer</title>
+<meta name="description" content="Brian Ndung'u is a software engineer in Kenya building backend systems, APIs, and AI & machine learning products in Java, Spring Boot, Python and FastAPI.">
+<meta name="author" content="Brian Ndung'u">
+<meta name="theme-color" content="#17493a">
+<link rel="canonical" href="https://ray100-art.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ray100-art.github.io/">
+<meta property="og:title" content="Brian Ndung'u · Software Engineer">
+<meta property="og:description" content="Backend systems, APIs, and AI & machine learning. Case studies: ParkNairobi, DaktariAssist, DRIP Commerce and more.">
+<meta property="og:image" content="https://ray100-art.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@brian91817">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Brian Ndung'u","jobTitle":"Software Engineer","url":"https://ray100-art.github.io/","email":"mailto:ndungub058@gmail.com","address":{"@type":"PostalAddress","addressCountry":"KE"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Chuka University"},"sameAs":["https://github.com/ray100-art","https://www.linkedin.com/in/brian-ndung-u-7a0a31345/"]}
+</script>
+<style>
+:root{
+  --bg:#f4f1ea; --panel:#fbf9f4; --panel-2:#efebe2;
+  --line:#e0dacd; --line-2:#cfc7b8;
+  --text:#1f1d1a; --text-2:#4f4a43; --muted:#6c665c;
+  --accent:#17493a; --accent-hover:#10372b; --accent-soft:#e3ece6; --accent-ink:#ffffff;
+  --ochre:#e8b659; --ochre-ink:#8a5a12; --on-dark:#f4f1ea; --on-dark-2:#b9cfc4; --ink:#1f1d1a;
+  --ok:#17493a; --err:#a3341f;
+  --sans:'Instrument Sans',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+  --wrap:1180px; --r:10px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:hover{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+img,svg{max-width:100%}
+h1,h2,h3{margin:0;line-height:1.1;letter-spacing:-.02em;font-weight:600}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
+.mono{font-family:var(--mono)}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.muted{color:var(--muted)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:var(--accent-ink);padding:8px 12px;z-index:100}
+.skip:focus{left:8px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(244,241,234,.9);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
+.nav.scrolled{border-bottom-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;font-family:var(--mono);font-size:13px}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{color:var(--text-2)}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{padding:8px 14px;border:1px solid var(--accent);color:var(--accent)!important;border-radius:6px}
+.nav-cta:hover{background:var(--accent);color:var(--accent-ink)!important}
+.menu-btn{display:none;background:none;border:1px solid var(--line-2);color:var(--text);border-radius:6px;padding:8px 12px;font:inherit;cursor:pointer}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 21px;border-radius:6px;font-weight:600;font-size:15px;border:1px solid var(--line-2);transition:transform .15s,background .15s,color .15s,border-color .15s}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn-primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:700}
+.btn-primary:hover{background:var(--accent-hover);border-color:var(--accent-hover);color:var(--accent-ink)}
+.btn:active{transform:translateY(1px)}
+
+/* hero */
+.hero{padding:88px 0 96px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;color:var(--text-2)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.hero h1{font-size:clamp(40px,6vw,66px);line-height:1.03;margin:22px 0 22px}
+.hero h1 span{color:var(--muted)}
+.hero p.lead{font-size:19px;color:var(--text-2);max-width:540px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.hero .facts{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:36px;font-family:var(--mono);font-size:13px;color:var(--muted)}
+
+/* diagram */
+.diagram{margin:0;padding:22px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel);font-family:var(--mono);font-size:12px;display:flex;flex-direction:column;gap:12px}
+.diagram figcaption{display:flex;justify-content:space-between;color:var(--muted)}
+.diagram .row{display:grid;gap:10px}
+.diagram .row.two{grid-template-columns:1fr 1fr}
+.diagram .row.three{grid-template-columns:1fr 1fr 1fr}
+.node{padding:12px 10px;border:1px solid var(--line-2);border-radius:6px;text-align:center;background:var(--panel-2);line-height:1.5}
+.node small{display:block;color:var(--muted);font-size:11px}
+.node.core{border-color:var(--accent);background:var(--accent-soft);text-align:left;padding:14px 16px}
+.node.core b{color:var(--accent);font-weight:500}
+.flow{text-align:center;color:var(--muted);font-size:11px}
+
+/* sections */
+section{padding:96px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.sec-head h2{font-size:clamp(28px,3.4vw,38px);margin-top:10px}
+.sec-head .aside{font-family:var(--mono);font-size:13px;color:var(--muted)}
+
+/* case cards */
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.card{display:flex;flex-direction:column;gap:14px;padding:28px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel);transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--accent);transform:translateY(-2px);color:inherit;box-shadow:0 10px 24px -18px rgba(31,29,26,.35)}
+.card h3{font-size:26px}
+.card p{color:var(--text-2);font-size:15.5px}
+.card .stack{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:auto}
+.card .go{font-family:var(--mono);font-size:13px;color:var(--accent)}
+
+/* case study */
+.case{padding:72px 0;border-top:1px dashed var(--line)}
+.case:first-of-type{border-top:0;padding-top:24px}
+.case-grid{display:grid;grid-template-columns:280px minmax(0,1fr);gap:56px}
+.case-meta{position:sticky;top:96px;align-self:start;display:flex;flex-direction:column;gap:18px}
+.case-meta h3{font-size:34px}
+.case-meta dl{margin:0;display:flex;flex-direction:column;gap:12px;font-size:14px}
+.case-meta dt{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.case-meta dd{margin:2px 0 0;color:var(--text-2)}
+.case-links{display:flex;flex-wrap:wrap;gap:10px}
+.case-links a{font-family:var(--mono);font-size:13px;padding:8px 12px;border:1px solid var(--line-2);border-radius:6px}
+.case-body{display:flex;flex-direction:column;gap:30px}
+.case-body h4{margin:0 0 10px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:500}
+.case-body p{color:var(--text-2)}
+.case-body ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+.case-body li{position:relative;padding-left:22px;color:var(--text-2)}
+.case-body li::before{content:"→";position:absolute;left:0;color:var(--accent);font-family:var(--mono);font-size:14px}
+.case-body li b{color:var(--text);font-weight:600}
+.pipeline{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-family:var(--mono);font-size:12px}
+.pipeline span{padding:8px 12px;border:1px solid var(--line-2);border-radius:6px;background:var(--panel)}
+.pipeline i{font-style:normal;color:var(--muted)}
+.note{padding:14px 16px;border:1px solid var(--line);border-radius:8px;background:var(--panel);font-size:14px;color:var(--text-2)}
+
+/* more work */
+.more{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:40px}
+.more a{padding:20px;border:1px solid var(--line);border-radius:var(--r);display:flex;flex-direction:column;gap:8px}
+.more a:hover{border-color:var(--accent);color:inherit}
+.more b{font-weight:600}
+.more span{font-size:14px;color:var(--text-2)}
+.more small{font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.skill{padding:26px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
+.skill h3{font-size:19px;margin-bottom:14px}
+.skill ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;font-size:15px;color:var(--text-2)}
+.skill li::before{content:"· ";color:var(--accent)}
+.stack-table{margin-top:28px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.stack-row{display:grid;grid-template-columns:200px 1fr;border-top:1px solid var(--line);font-size:15px}
+.stack-row:first-child{border-top:0}
+.stack-row div{padding:14px 20px}
+.stack-row div:first-child{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--panel)}
+
+/* about */
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:56px}
+.about p{color:var(--text-2);font-size:18px;margin-bottom:18px}
+.about p strong{color:var(--text);font-weight:600}
+.principles{display:flex;flex-direction:column;gap:16px}
+.principle{padding:18px 20px;border-left:2px solid var(--accent);background:var(--panel);border-radius:0 8px 8px 0}
+.principle b{display:block;margin-bottom:4px}
+.principle span{font-size:15px;color:var(--text-2)}
+
+/* contact */
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px}
+.contact h2{font-size:clamp(32px,4vw,48px);margin:10px 0 18px}
+.contact .lead{color:var(--text-2);font-size:18px;margin-bottom:28px}
+.channels{display:flex;flex-direction:column;gap:2px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.channels a{display:flex;justify-content:space-between;gap:16px;padding:16px 20px;background:var(--panel);font-size:15px}
+.channels a span:first-child{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+form{display:flex;flex-direction:column;gap:16px;padding:28px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.field input,.field textarea{background:#fff;border:1px solid var(--line-2);border-radius:6px;color:var(--text);font:inherit;font-size:16px;padding:12px 14px}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--accent)}
+.field textarea{min-height:140px;resize:vertical}
+.form-status{font-family:var(--mono);font-size:13px;min-height:20px}
+.form-status.ok{color:var(--ok)}.form-status.err{color:var(--err)}
+.hp{position:absolute;left:-9999px}
+
+footer{border-top:1px solid var(--line);padding:32px 0;font-family:var(--mono);font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 
+/* ---- colour blocks & weight ---- */
+h1,h2,h3{font-weight:700}
+.hero h1{font-size:clamp(44px,6.4vw,76px);letter-spacing:-.035em;line-height:.98}
+.hero h1 span{color:var(--accent)}
+.hero p.lead{color:var(--text-2);font-size:20px}
+.sec-head h2{font-size:clamp(32px,4vw,48px);letter-spacing:-.03em}
+.label{color:var(--ochre-ink);font-weight:500}
+.nav-cta{background:var(--accent);color:var(--on-dark)!important;border-color:var(--accent)}
+.nav-cta:hover{background:var(--accent-hover);color:var(--on-dark)!important}
+.dot{background:var(--ochre-ink)}
 
-        /* Scrollbar */
-        ::-webkit-scrollbar { width:4px; }
-        ::-webkit-scrollbar-track { background:var(--navy); }
-        ::-webkit-scrollbar-thumb { background:var(--gold); border-radius:2px; }
+.diagram{background:var(--accent);border-color:var(--accent);color:var(--on-dark);box-shadow:0 24px 48px -28px rgba(23,73,58,.55)}
+.diagram figcaption{color:var(--on-dark-2)}
+.node{background:rgba(244,241,234,.06);border-color:rgba(244,241,234,.2);color:var(--on-dark)}
+.node small,.flow{color:var(--on-dark-2)}
+.node.core{background:var(--ochre);border-color:var(--ochre);color:var(--ink)}
+.node.core b{color:var(--ink);font-weight:700}
+.node.core .muted{color:#4a3a14}
 
-        /* Navbar */
-        nav { position:fixed; top:0; width:100%; z-index:100; padding:20px 60px; display:flex; justify-content:space-between; align-items:center; transition:all 0.3s; }
-        nav.scrolled { background:rgba(11,22,40,0.95); backdrop-filter:blur(12px); padding:14px 60px; border-bottom:1px solid var(--border); }
-        .nav-logo { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:700; color:var(--gold); letter-spacing:1px; text-decoration:none; }
-        .nav-links { display:flex; gap:32px; list-style:none; }
-        .nav-links a { color:var(--muted); text-decoration:none; font-size:0.82rem; letter-spacing:1.5px; text-transform:uppercase; transition:color 0.2s; position:relative; }
-        .nav-links a::after { content:''; position:absolute; bottom:-4px; left:0; width:0; height:1px; background:var(--gold); transition:width 0.3s; }
-        .nav-links a:hover { color:var(--gold); }
-        .nav-links a:hover::after { width:100%; }
+.card h3{font-size:28px}
+.card.feature{background:var(--accent);border-color:var(--accent);color:var(--on-dark)}
+.card.feature p{color:var(--on-dark-2)}
+.card.feature .label,.card.feature .go{color:var(--ochre)}
+.card.feature .stack{color:var(--on-dark-2)}
+.card.feature:hover{border-color:var(--ochre)}
 
-        /* Hero */
-        .hero { min-height:100vh; display:flex; align-items:center; padding:0 60px; position:relative; overflow:hidden; }
-        .hero-bg { position:absolute; inset:0; background:radial-gradient(ellipse at 70% 50%, rgba(26,58,92,0.4) 0%, transparent 70%); }
-        .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(201,168,76,0.04) 1px,transparent 1px), linear-gradient(90deg,rgba(201,168,76,0.04) 1px,transparent 1px); background-size:60px 60px; }
-        .hero-content { position:relative; z-index:2; max-width:700px; }
-        .hero-tag { font-size:0.78rem; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:20px; display:flex; align-items:center; gap:12px; opacity:0; animation:fadeUp 0.8s ease 0.2s forwards; }
-        .hero-tag::before { content:''; width:40px; height:1px; background:var(--gold); }
-        h1 { font-family:'Playfair Display',serif; font-size:clamp(3rem,6vw,5.5rem); font-weight:900; line-height:1.05; color:var(--white); margin-bottom:8px; opacity:0; animation:fadeUp 0.8s ease 0.4s forwards; }
-        h1 span { color:var(--gold); }
-        .hero-subtitle { font-size:1.05rem; color:var(--muted); max-width:500px; line-height:1.8; margin:24px 0 40px; opacity:0; animation:fadeUp 0.8s ease 0.6s forwards; font-weight:300; }
-        .hero-btns { display:flex; gap:16px; opacity:0; animation:fadeUp 0.8s ease 0.8s forwards; }
-        .btn-primary { padding:14px 32px; background:var(--gold); color:var(--navy); font-family:'Lato',sans-serif; font-weight:700; font-size:0.82rem; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; border:none; cursor:pointer; transition:all 0.3s; position:relative; overflow:hidden; }
-        .btn-primary::before { content:''; position:absolute; inset:0; background:var(--gold2); transform:translateX(-100%); transition:transform 0.3s; }
-        .btn-primary:hover::before { transform:translateX(0); }
-        .btn-primary span { position:relative; z-index:1; }
-        .btn-outline { padding:14px 32px; border:1px solid var(--gold); color:var(--gold); font-family:'Lato',sans-serif; font-weight:700; font-size:0.82rem; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; transition:all 0.3s; }
-        .btn-outline:hover { background:rgba(201,168,76,0.1); }
+.case-meta h3{font-size:38px;letter-spacing:-.03em}
+.case-body h4{color:var(--ochre-ink)}
+.principle{border-left:3px solid var(--ochre-ink)}
+.principle b{font-weight:700}
+.skill h3{font-size:20px}
+.skill li::before{color:var(--ochre-ink)}
+.stack-row div:first-child{background:var(--panel-2)}
 
-        .hero-number { position:absolute; right:60px; top:50%; transform:translateY(-50%); font-family:'Playfair Display',serif; font-size:12rem; font-weight:900; color:rgba(201,168,76,0.04); line-height:1; user-select:none; }
+section.band{background:var(--accent);border-top:0;color:var(--on-dark)}
+.band .label{color:var(--ochre)}
+.band h2{color:var(--on-dark)}
+.band .lead{color:var(--on-dark-2)}
+.band .channels{border-color:rgba(244,241,234,.2);gap:0}
+.band .channels a{background:rgba(244,241,234,.06);border-top:1px solid rgba(244,241,234,.14);color:var(--on-dark)}
+.band .channels a:first-child{border-top:0}
+.band .channels a span:first-child{color:var(--ochre)}
+.band .channels a:hover{background:rgba(244,241,234,.12);color:var(--on-dark)}
+.band form{background:var(--bg);border-color:var(--bg);color:var(--text);box-shadow:0 24px 48px -28px rgba(0,0,0,.45)}
+.band a:focus-visible,.band :focus-visible{outline-color:var(--ochre)}
 
-        @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
-        .hero-tag, h1, .hero-subtitle, .hero-btns { animation-fill-mode:forwards !important; }
+footer{background:var(--ink);border-top:0;color:#d9c9a8}
+footer a:hover{color:var(--ochre)}
 
-        /* Sections */
-        section { padding:100px 60px; }
-        .section-label { font-size:0.72rem; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:12px; display:flex; align-items:center; gap:12px; }
-        .section-label::before { content:''; width:30px; height:1px; background:var(--gold); }
-        .section-title { font-family:'Playfair Display',serif; font-size:clamp(2rem,3.5vw,3rem); font-weight:700; color:var(--white); margin-bottom:16px; }
-        .section-divider { width:60px; height:2px; background:var(--gold); margin-bottom:50px; }
+/* reveal */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.card:hover{transform:none}}
 
-        /* About */
-        .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
-        .about-text p { color:var(--muted); font-size:0.95rem; line-height:1.9; margin-bottom:20px; font-weight:300; }
-        .about-text p strong { color:var(--text); font-weight:700; }
-        .about-stats { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:40px; }
-        .stat-box { border:1px solid var(--border); padding:20px; position:relative; }
-        .stat-box::before { content:''; position:absolute; top:-1px; left:0; width:30px; height:2px; background:var(--gold); }
-        .stat-num { font-family:'Playfair Display',serif; font-size:2.4rem; font-weight:900; color:var(--gold); line-height:1; }
-        .stat-label { font-size:0.75rem; color:var(--muted); text-transform:uppercase; letter-spacing:1.5px; margin-top:4px; }
-        .about-image { position:relative; }
-        .about-img-box { width:100%; aspect-ratio:3/4; background:var(--navy2); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
-        .about-img-box::after { content:''; position:absolute; inset:0; background:linear-gradient(135deg, rgba(201,168,76,0.1) 0%, transparent 60%); }
-        .about-initials { font-family:'Playfair Display',serif; font-size:7rem; font-weight:900; color:rgba(201,168,76,0.15); }
-        .about-img-border { position:absolute; bottom:-16px; right:-16px; width:100%; height:100%; border:1px solid var(--border); z-index:-1; }
-
-        /* Skills */
-        .skills-section { background:var(--navy2); }
-        .skills-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
-        .skill-card { border:1px solid var(--border); padding:28px; transition:all 0.3s; position:relative; overflow:hidden; }
-        .skill-card::before { content:''; position:absolute; top:0; left:0; width:2px; height:0; background:var(--gold); transition:height 0.3s; }
-        .skill-card:hover { border-color:var(--gold); transform:translateY(-4px); }
-        .skill-card:hover::before { height:100%; }
-        .skill-icon { font-size:1.8rem; margin-bottom:14px; }
-        .skill-title { font-family:'Playfair Display',serif; font-size:1rem; font-weight:600; color:var(--white); margin-bottom:12px; }
-        .skill-tags { display:flex; flex-wrap:wrap; gap:6px; }
-        .tag { font-size:0.68rem; padding:3px 10px; border:1px solid var(--border); color:var(--muted); letter-spacing:0.8px; text-transform:uppercase; }
-
-        /* Projects */
-        .projects-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
-        .project-card { background:var(--navy2); border:1px solid var(--border); overflow:hidden; transition:all 0.3s; position:relative; }
-        .project-card:hover { border-color:var(--gold); transform:translateY(-6px); }
-        .project-card.featured { grid-column:1/-1; }
-        .project-header { padding:32px; position:relative; }
-        .project-header::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--gold),transparent); opacity:0; transition:opacity 0.3s; }
-        .project-card:hover .project-header::before { opacity:1; }
-        .project-num { font-family:'Playfair Display',serif; font-size:3.5rem; font-weight:900; color:rgba(201,168,76,0.08); position:absolute; top:16px; right:24px; line-height:1; }
-        .project-type { font-size:0.68rem; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
-        .project-title { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:700; color:var(--white); margin-bottom:12px; }
-        .project-desc { color:var(--muted); font-size:0.88rem; line-height:1.8; font-weight:300; }
-        .project-footer { padding:20px 32px; border-top:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; }
-        .project-stack { display:flex; gap:8px; flex-wrap:wrap; }
-        .stack-tag { font-size:0.65rem; padding:3px 8px; background:rgba(201,168,76,0.08); border:1px solid rgba(201,168,76,0.2); color:var(--gold); letter-spacing:0.5px; }
-        .project-link { color:var(--gold); text-decoration:none; font-size:0.75rem; letter-spacing:1.5px; text-transform:uppercase; display:flex; align-items:center; gap:6px; transition:gap 0.2s; }
-        .project-link:hover { gap:10px; }
-
-        /* Contact */
-        .contact-section { background:var(--navy2); }
-        .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
-        .contact-info p { color:var(--muted); font-size:0.92rem; line-height:1.9; font-weight:300; margin-bottom:40px; }
-        .contact-item { display:flex; align-items:center; gap:16px; margin-bottom:20px; transition:transform 0.2s; } a.contact-item:hover { transform:translateX(4px); }
-        .contact-dot { width:8px; height:8px; background:var(--gold); border-radius:50%; flex-shrink:0; }
-        .contact-label { font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:2px; }
-        .contact-val { color:var(--text); font-size:0.88rem; }
-        .social-links { display:flex; gap:16px; margin-top:40px; }
-        .social-link { width:42px; height:42px; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--muted); text-decoration:none; font-size:0.85rem; transition:all 0.3s; }
-        .social-link:hover { border-color:var(--gold); color:var(--gold); background:rgba(201,168,76,0.05); }
-        .contact-form { display:flex; flex-direction:column; gap:16px; }
-        .form-group { display:flex; flex-direction:column; gap:6px; }
-        .form-group label { font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; color:var(--gold); }
-        .form-group input, .form-group textarea { background:rgba(201,168,76,0.04); border:1px solid var(--border); padding:12px 16px; color:var(--text); font-family:'Lato',sans-serif; font-size:0.88rem; outline:none; transition:border-color 0.2s; resize:none; }
-        .form-group input:focus, .form-group textarea:focus { border-color:var(--gold); }
-        .form-group input::placeholder, .form-group textarea::placeholder { color:var(--muted); }
-        .form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-
-        /* Footer */
-        footer { padding:40px 60px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; }
-        .footer-copy { font-size:0.75rem; color:var(--muted); }
-        .footer-copy span { color:var(--gold); }
-        .footer-back { color:var(--muted); text-decoration:none; font-size:0.72rem; letter-spacing:2px; text-transform:uppercase; display:flex; align-items:center; gap:8px; transition:color 0.2s; }
-        .footer-back:hover { color:var(--gold); }
-
-        /* Fade in on scroll */
-        .reveal { opacity:0; transform:translateY(30px); transition:all 0.7s ease; }
-        .reveal.visible { opacity:1; transform:translateY(0); }
-
-        /* Active nav */
-        .nav-links a.active { color:var(--gold); }
-
-        @media(max-width:900px) {
-            nav, section, footer { padding-left:24px; padding-right:24px; }
-            .hero { padding:0 24px; }
-            .hero-number { display:none; }
-            .about-grid, .contact-grid { grid-template-columns:1fr; gap:40px; }
-            .skills-grid { grid-template-columns:1fr 1fr; }
-            .projects-grid { grid-template-columns:1fr; }
-            .project-card.featured { grid-column:auto; }
-            .form-row { grid-template-columns:1fr; }
-            nav { padding:16px 24px; }
-            nav.scrolled { padding:12px 24px; }
-        }
-    </style>
+/* responsive */
+@media (max-width:960px){
+  .hero .wrap,.about,.contact{grid-template-columns:1fr}
+  .case-grid{grid-template-columns:1fr;gap:28px}
+  .case-meta{position:static}
+  .skills,.more{grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  .wrap{padding:0 16px}
+  .menu-btn{display:block}
+  .nav-links{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 16px 16px}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 0;width:100%}
+  .nav-cta{margin-top:8px;text-align:center}
+  .hero{padding:56px 0 64px}
+  section{padding:64px 0}
+  .cards,.skills,.more{grid-template-columns:1fr}
+  .diagram .row.three{grid-template-columns:1fr}
+  .stack-row{grid-template-columns:1fr}
+  .card,.skill,form{padding:22px}
+}
+</style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<!-- Navbar -->
-<nav id="navbar">
-    <a href="#home" class="nav-logo">BN</a>
-    <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+<header class="nav" id="top">
+  <div class="wrap">
+    <a href="#top" aria-label="Brian Ndung'u, back to top"><span style="color:var(--accent)">~/</span>brian-ndungu</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav-links">menu</button>
+    <nav class="nav-links" id="nav-links" aria-label="Primary">
+      <a href="#work">work</a>
+      <a href="#skills">skills</a>
+      <a href="#about">about</a>
+      <a href="https://github.com/ray100-art">github ↗</a>
+      <a href="#contact" class="nav-cta">contact</a>
+    </nav>
+  </div>
+</header>
 
-<!-- Hero -->
-<section class="hero" id="home">
-    <div class="hero-bg"></div>
-    <div class="hero-grid"></div>
-    <div class="hero-content">
-        <div class="hero-tag">Software Developer &nbsp;·&nbsp; CS Student @ Chuka University</div>
-        <h1>Brian<br><span>Ndung'u</span></h1>
-        <p class="hero-subtitle">
-            I build things that work — web apps, desktop software, mobile apps, AI systems, and everything in between. Based in Kenya, building for the world.
-        </p>
-        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;opacity:0;animation:fadeUp 0.8s ease 0.75s forwards">
-            <span style="font-size:0.7rem;padding:4px 12px;border:1px solid rgba(201,168,76,0.3);color:var(--muted);letter-spacing:1px;text-transform:uppercase">Spring Boot</span>
-            <span style="font-size:0.7rem;padding:4px 12px;border:1px solid rgba(201,168,76,0.3);color:var(--muted);letter-spacing:1px;text-transform:uppercase">Java</span>
-            <span style="font-size:0.7rem;padding:4px 12px;border:1px solid rgba(201,168,76,0.3);color:var(--muted);letter-spacing:1px;text-transform:uppercase">PHP</span>
-            <span style="font-size:0.7rem;padding:4px 12px;border:1px solid rgba(201,168,76,0.3);color:var(--muted);letter-spacing:1px;text-transform:uppercase">Machine Learning</span>
-            <span style="font-size:0.7rem;padding:4px 12px;border:1px solid rgba(201,168,76,0.3);color:var(--muted);letter-spacing:1px;text-transform:uppercase">Mobile Dev</span>
-        </div>
-        <div class="hero-btns">
-            <a href="#projects" class="btn-primary"><span>View My Work</span></a>
-            <a href="#contact" class="btn-outline">Get In Touch</a>
-        </div>
+<main id="main">
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <div class="status"><span class="dot" aria-hidden="true"></span>Open to backend, full-stack &amp; AI engineering roles</div>
+      <h1>Brian Ndung'u <span>builds the part of the system you can't see, and makes it reliable.</span></h1>
+      <p class="lead">Software engineer in Kenya focused on backend systems, APIs, and AI &amp; machine learning. I work in Java and Spring Boot, Python and FastAPI, and React with TypeScript.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#work">View case studies</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+      <div class="facts"><span>Computer Science · Chuka University</span><span>Based in Kenya</span></div>
     </div>
-    <div class="hero-number">BN</div>
 
+    <figure class="diagram" aria-label="Architecture of ParkNairobi, my flagship project">
+      <figcaption><span>parknairobi / architecture</span><span>live demo ↗</span></figcaption>
+      <div class="row two">
+        <div class="node">Browser<small>Leaflet map · OSRM routes</small></div>
+        <div class="node">Nginx<small>/api · /ws proxy</small></div>
+      </div>
+      <div class="flow">↓ JWT · REST · STOMP over WebSocket</div>
+      <div class="node core"><b>Spring Boot API</b><br><span class="muted">auth &amp; roles · bookings · pricing · rate limiting</span></div>
+      <div class="row three">
+        <div class="node">MySQL<small>Flyway V1–V8</small></div>
+        <div class="node">M-Pesa<small>idempotent callback</small></div>
+        <div class="node">Sensors<small>bay entry / exit</small></div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><div class="label">Selected work</div><h2>Case studies</h2></div>
+      <div class="aside">problem → design → trade-offs → result</div>
+    </div>
+
+    <div class="cards">
+      <a class="card feature reveal" href="#parknairobi">
+        <span class="label">01 · Flagship · Full stack</span>
+        <h3>ParkNairobi</h3>
+        <p>Smart parking for Kenyan towns. Live bay availability over WebSockets, route navigation, and M-Pesa payments that settle exactly once, even when the callback is retried.</p>
+        <span class="stack">Java 21 · Spring Boot 3 · MySQL · WebSocket · Docker</span>
+        <span class="go">Read case study →</span>
+      </a>
+      <a class="card reveal" href="#daktari">
+        <span class="label">02 · AI &amp; machine learning</span>
+        <h3>DaktariAssist</h3>
+        <p>An AI second opinion for Kenyan clinicians. Checks a diagnosis against vitals and symptoms and returns red flags, differentials and tests as typed, structured JSON.</p>
+        <span class="stack">Java 21 · Spring Boot 3.3 · Llama 3.3 70B · Groq</span>
+        <span class="go">Read case study →</span>
+      </a>
+      <a class="card reveal" href="#drip">
+        <span class="label">03 · E-commerce</span>
+        <h3>DRIP Commerce</h3>
+        <p>A fashion store's REST API and storefront: JWT sign-in, catalogue, an order lifecycle, and M-Pesa STK Push checkout.</p>
+        <span class="stack">Java 17 · Spring Boot 3.2 · Spring Security · JPA · MySQL</span>
+        <span class="go">Read case study →</span>
+      </a>
+      <a class="card reveal" href="#school">
+        <span class="label">04 · Desktop</span>
+        <h3>School Record Management</h3>
+        <p>A desktop system for students, grades, attendance and fees, with admin and teacher roles and a layered FXML → controller → DAO design.</p>
+        <span class="stack">Java 21 · JavaFX 21 · PostgreSQL · JUnit 5</span>
+        <span class="go">Read case study →</span>
+      </a>
+    </div>
+
+    <!-- Case studies -->
+    <div style="margin-top:72px">
+
+    <article class="case" id="parknairobi">
+      <div class="case-grid">
+        <aside class="case-meta reveal">
+          <div class="label">01 · Flagship</div>
+          <h3>ParkNairobi</h3>
+          <dl>
+            <div><dt>Role</dt><dd>Sole engineer: backend, frontend and deployment</dd></div>
+            <div><dt>Stack</dt><dd>Java 21, Spring Boot 3, Spring Security, MySQL, Flyway, STOMP WebSocket, Leaflet, Docker, Nginx</dd></div>
+          </dl>
+          <div class="case-links">
+            <a href="https://ray100-art.github.io/Park-Nairobi-Frontend/">Live demo ↗</a>
+            <a href="https://github.com/ray100-art/Park-Nairobi-Backend">API code ↗</a>
+            <a href="https://github.com/ray100-art/Park-Nairobi-Frontend">Web code ↗</a>
+          </div>
+        </aside>
+        <div class="case-body reveal">
+          <div><h4>Problem</h4><p>Drivers in Kenyan towns lose time circling for parking, and operators have no live picture of which bays are free. Most people pay with M-Pesa, so payment has to work on a phone, over an unreliable network.</p></div>
+          <div><h4>What I built</h4>
+            <ul>
+              <li><b>A live map of bays</b> across Nairobi and other towns, with nearest-bay search from the driver's location (Haversine distance), an occupancy heatmap, and turn-by-turn routes from OSRM.</li>
+              <li><b>Bookings</b> that reserve a bay for 15 minutes, and sensor entry/exit events that keep each bay's status accurate.</li>
+              <li><b>Live updates:</b> every status change is broadcast over STOMP WebSockets, so every open map changes at once without refreshing.</li>
+              <li><b>An admin console</b> for occupancy, bookings and users.</li>
+            </ul>
+          </div>
+          <div><h4>Engineering decisions</h4>
+            <ul>
+              <li><b>Payments that settle once.</b> Safaricom can deliver the same M-Pesa callback more than once. A payment only moves from <span class="mono">PENDING</span>, so a repeat is ignored, and the amount paid is checked against the booking's price before it is accepted.</li>
+              <li><b>An authenticated webhook.</b> The callback has to be public, because Safaricom sends no token, so it is verified with a shared secret or Safaricom's IP ranges instead.</li>
+              <li><b>Access control in two layers:</b> stateless JWT with <span class="mono">DRIVER</span> and <span class="mono">ADMIN</span> roles in the security filter chain, plus <span class="mono">@PreAuthorize</span> on admin operations. The WebSocket channel checks the token too.</li>
+              <li><b>A versioned schema:</b> eight Flyway migrations own the database structure, so any environment can be rebuilt from scratch.</li>
+              <li><b>Protection from abuse:</b> a request rate-limiting filter, CORS rules, and every credential read from the environment.</li>
+            </ul>
+          </div>
+          <div><h4>Delivery</h4><p>Dockerfiles and <span class="mono">docker-compose</span> for the whole stack, with Nginx proxying <span class="mono">/api</span> and <span class="mono">/ws</span>. Unit tests cover the distance calculations and the slot service.</p></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="case" id="daktari">
+      <div class="case-grid">
+        <aside class="case-meta reveal">
+          <div class="label">02 · AI &amp; ML</div>
+          <h3>DaktariAssist</h3>
+          <dl>
+            <div><dt>Role</dt><dd>Sole engineer: prompt design, API and UI</dd></div>
+            <div><dt>Stack</dt><dd>Java 21, Spring Boot 3.3, Jackson, Groq API, Llama 3.3 70B, GitHub Actions</dd></div>
+          </dl>
+          <div class="case-links"><a href="https://github.com/ray100-art/DaktariAssist">Code ↗</a></div>
+        </aside>
+        <div class="case-body reveal">
+          <div><h4>Problem</h4><p>Clinicians in busy Kenyan facilities often work without a colleague to sanity-check a diagnosis. General AI chat tools answer in free text, ignore the local disease burden, and are hard to build on reliably.</p></div>
+          <div><h4>How it works</h4>
+            <div class="pipeline" role="img" aria-label="Pipeline: case form, Spring Boot API, Llama 3.3 70B on Groq, JSON parsing, structured report">
+              <span>case form</span><i>→</i><span>Spring Boot API</span><i>→</i><span>Llama 3.3 70B · Groq</span><i>→</i><span>parse → typed objects</span><i>→</i><span>report</span>
+            </div>
+          </div>
+          <div><h4>Engineering decisions</h4>
+            <ul>
+              <li><b>Structured output, not chat.</b> The system prompt fixes a strict JSON schema: a green, amber or red consistency rating, red flags, 2–3 differential diagnoses, 3–5 tests, and one follow-up question.</li>
+              <li><b>Reliable parsing.</b> The service strips stray Markdown fences and parses the reply into typed Java objects. Failures come back as a structured <span class="mono">error</span> field instead of a crash.</li>
+              <li><b>Consistency:</b> temperature 0.2, so similar cases get similar answers.</li>
+              <li><b>Local context and tone.</b> The prompt covers malaria, typhoid, TB, HIV, brucellosis and meningitis, and phrases disagreement the way a supportive colleague would.</li>
+            </ul>
+          </div>
+          <p class="note">This is a decision-support prototype, not a medical device, and it has not been clinically validated. Clinical judgement stays with the clinician.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="case" id="drip">
+      <div class="case-grid">
+        <aside class="case-meta reveal">
+          <div class="label">03 · E-commerce</div>
+          <h3>DRIP Commerce</h3>
+          <dl>
+            <div><dt>Role</dt><dd>Sole engineer: API and storefront</dd></div>
+            <div><dt>Stack</dt><dd>Java 17, Spring Boot 3.2, Spring Security, JJWT, JPA/Hibernate, MySQL, vanilla JS</dd></div>
+          </dl>
+          <div class="case-links">
+            <a href="https://github.com/ray100-art/DRIP---ECOMMERCE-BACKEND">API code ↗</a>
+            <a href="https://github.com/ray100-art/DRIP--ECOMMERCE-FRONTED">Storefront code ↗</a>
+          </div>
+        </aside>
+        <div class="case-body reveal">
+          <div><h4>What I built</h4>
+            <ul>
+              <li><b>Accounts:</b> passwords hashed with BCrypt, and a signed JWT on login that a request filter validates on every later call.</li>
+              <li><b>Catalogue and orders:</b> full product CRUD, seeded on first start, and orders that move through <span class="mono">pending → processing → shipped → delivered</span>.</li>
+              <li><b>M-Pesa checkout:</b> STK Push to the customer's phone, accepting <span class="mono">07…</span>, <span class="mono">01…</span>, <span class="mono">+254…</span> and <span class="mono">254…</span> number formats, plus Safaricom's callback.</li>
+              <li><b>Storefront:</b> search, wishlist, a cart that survives reloads, and an admin page.</li>
+            </ul>
+          </div>
+          <div><h4>Next steps</h4><p>The repository lists its roadmap openly: lock management endpoints to admins, record payment status on the order from the callback, cache the Daraja token, and add integration tests. ParkNairobi's payment and access-control design is where these were carried further.</p></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="case" id="school">
+      <div class="case-grid">
+        <aside class="case-meta reveal">
+          <div class="label">04 · Desktop</div>
+          <h3>School Record Management</h3>
+          <dl>
+            <div><dt>Role</dt><dd>Sole engineer</dd></div>
+            <div><dt>Stack</dt><dd>Java 21 (modules), JavaFX 21, FXML, PostgreSQL, JDBC, jBCrypt, JUnit 5, GitHub Actions</dd></div>
+          </dl>
+          <div class="case-links"><a href="https://github.com/ray100-art/SchoolRecordManagementSystem">Code ↗</a></div>
+        </aside>
+        <div class="case-body reveal">
+          <div><h4>What I built</h4>
+            <ul>
+              <li><b>Day-to-day school records:</b> students, teachers, subjects, grades, attendance filtered by date, and fee payments.</li>
+              <li><b>Secure sign-in:</b> BCrypt at cost 12, with admin and teacher roles.</li>
+              <li><b>A database that sets itself up:</b> tables are created on first launch and a default admin account is seeded.</li>
+            </ul>
+          </div>
+          <div><h4>Design</h4><p>Every screen follows <span class="mono">FXML view → controller → DAO → PostgreSQL</span>, so the interface, the logic and the SQL stay separate and can be tested on their own. JUnit tests cover the student data-access layer, and CI builds every push.</p></div>
+        </div>
+      </div>
+    </article>
+
+    </div>
+
+    <div class="more reveal" aria-label="More projects">
+      <a href="https://github.com/ray100-art/ExpertDiagnosticSystem"><small>AI · Prolog</small><b>Expert Diagnostic System ↗</b><span>A rule-based expert system that diagnoses 11 computer faults and explains its reasoning.</span></a>
+      <a href="https://github.com/ray100-art/TournamentSortAlgorithm"><small>Algorithms · C++</small><b>Tournament Sort ↗</b><span>O(n log n) knockout-bracket sorting that replays only the winner's path after each pick.</span></a>
+      <a href="https://github.com/ray100-art/SelectionSortAlgorithm"><small>Algorithms · C</small><b>Selection Sort ↗</b><span>Strict ANSI C with heap allocation and validated input.</span></a>
+    </div>
+  </div>
 </section>
 
-<!-- About -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><div class="label">Capabilities</div><h2>What I bring to a team</h2></div>
+    </div>
+    <div class="skills">
+      <div class="skill reveal"><h3>Backend &amp; APIs</h3><ul>
+        <li>RESTful API design: validation, pagination, error contracts, OpenAPI</li>
+        <li>JWT authentication, BCrypt, role-based access</li>
+        <li>Mobile-money payments with idempotent callbacks</li>
+        <li>Layered architecture, dependency injection, SOLID</li></ul></div>
+      <div class="skill reveal"><h3>Data</h3><ul>
+        <li>Relational modelling and normalisation</li>
+        <li>SQL, indexing, transactions</li>
+        <li>Migrations with Flyway and Alembic</li>
+        <li>ORMs (JPA/Hibernate, SQLAlchemy) with the SQL in view</li></ul></div>
+      <div class="skill reveal"><h3>AI &amp; machine learning</h3><ul>
+        <li>LLM applications: prompt design, structured outputs</li>
+        <li>Guardrails and failure handling around models</li>
+        <li>Knowledge representation and rule-based inference</li>
+        <li>ML fundamentals and model evaluation</li></ul></div>
+      <div class="skill reveal"><h3>Quality &amp; delivery</h3><ul>
+        <li>Unit, integration and end-to-end testing</li>
+        <li>CI with GitHub Actions; pull requests and code review</li>
+        <li>Docker, Nginx, Linux, cloud and static hosting</li></ul></div>
+      <div class="skill reveal"><h3>Frontend</h3><ul>
+        <li>React with TypeScript, Vite, Tailwind</li>
+        <li>TanStack Query and React Router</li>
+        <li>Maps with Leaflet; accessible, responsive layouts</li></ul></div>
+      <div class="skill reveal"><h3>Professional</h3><ul>
+        <li>Turning real-world problems into scoped software</li>
+        <li>Explaining trade-offs to non-technical stakeholders</li>
+        <li>Clear technical writing and documentation</li>
+        <li>Agile delivery with end-to-end ownership</li></ul></div>
+    </div>
+
+    <div class="stack-table reveal" role="table" aria-label="Technology stack">
+      <div class="stack-row" role="row"><div role="rowheader">Languages</div><div role="cell">Java · Python · TypeScript · JavaScript · SQL · C · C++ · Prolog</div></div>
+      <div class="stack-row" role="row"><div role="rowheader">Backend</div><div role="cell">Spring Boot (Web, Security, Data JPA) · FastAPI · SQLAlchemy · Pydantic · Hibernate</div></div>
+      <div class="stack-row" role="row"><div role="rowheader">Data</div><div role="cell">PostgreSQL · MySQL · SQLite · Flyway · Alembic</div></div>
+      <div class="stack-row" role="row"><div role="rowheader">AI / ML</div><div role="cell">LLM APIs (Groq, Llama) · structured outputs · expert systems</div></div>
+      <div class="stack-row" role="row"><div role="rowheader">Testing</div><div role="cell">JUnit 5 · pytest · Vitest · Testing Library · Playwright</div></div>
+      <div class="stack-row" role="row"><div role="rowheader">DevOps &amp; tools</div><div role="cell">Docker · Nginx · GitHub Actions · Git · Maven · Linux · Netlify</div></div>
+    </div>
+  </div>
+</section>
+
 <section id="about">
-    <div class="section-label">Who I Am</div>
-    <div class="section-title">About Me</div>
-    <div class="section-divider"></div>
-    <div class="about-grid reveal">
-        <div class="about-text">
-            <p>
-                Hey, I'm <strong>Brian Ndung'u</strong> — a Software Developer from <strong>Chuka, Kenya</strong> who genuinely loves building things. Not just writing code, but actually solving problems that matter to real people.
-            </p>
-            <p>
-                I started with the basics — C, algorithms, logic — and kept going. Today I work across the full stack: <strong>Java Spring Boot</strong> backends, <strong>PHP</strong> web apps, <strong>MySQL</strong> databases, clean <strong>HTML/CSS/JS</strong> frontends, and even <strong>desktop applications</strong>. I'm also deeply interested in <strong>Machine Learning and AI</strong> — from rule-based expert systems to modern intelligent applications — and I build <strong>mobile apps</strong> too.
-            </p>
-            <p>
-                Right now I'm most proud of <strong>ParkNairobi</strong> — a smart parking system I built for Kenya with real-time slot tracking, M-Pesa payments, live maps and GPS navigation. It's the kind of project that shows what's possible when you combine good engineering with a real local problem.
-            </p>
-            <p>
-                When I'm not coding, I'm thinking about what to build next. That drive is what keeps me growing.
-            </p>
-            <div class="about-stats">
-                <div class="stat-box">
-                    <div class="stat-num">7+</div>
-                    <div class="stat-label">Projects Built</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-num">8+</div>
-                    <div class="stat-label">Technologies</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-num">Full</div>
-                    <div class="stat-label">Stack Developer</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-num">KE</div>
-                    <div class="stat-label">Based in Kenya</div>
-                </div>
-            </div>
-        </div>
-        <div class="about-image">
-            <div class="about-img-box">
-                <div class="about-initials">BN</div>
-                <div class="about-img-border"></div>
-            </div>
-        </div>
+  <div class="wrap about">
+    <div class="reveal">
+      <div class="label">About</div>
+      <h2 style="font-size:clamp(28px,3.4vw,38px);margin:10px 0 24px">Engineering for the places I know</h2>
+      <p>I'm <strong>Brian Ndung'u</strong>, a software engineer studying Computer Science at <strong>Chuka University</strong> in Kenya.</p>
+      <p>I started with C, algorithms and logic programming, and moved into building complete systems: APIs, data models, payment flows and the interfaces people use on top of them.</p>
+      <p>Most of my projects start from a local problem, like parking in Nairobi, clinics without a second opinion, or schools running on paper. Mobile money, patchy networks and real users shape the engineering, and I like it that way.</p>
     </div>
+    <div class="principles reveal" aria-label="How I work">
+      <div class="principle"><b>Model the data first.</b><span>A correct schema makes everything built on top of it simpler.</span></div>
+      <div class="principle"><b>Design for failure.</b><span>Retries, timeouts, duplicate callbacks and bad input are part of the feature.</span></div>
+      <div class="principle"><b>Prove it works.</b><span>Tests against real systems wherever possible, not just mocks.</span></div>
+      <div class="principle"><b>Leave it readable.</b><span>Code, commits and docs written for the next engineer.</span></div>
+    </div>
+  </div>
 </section>
 
-<!-- Skills -->
-<section id="skills" class="skills-section">
-    <div class="section-label">What I Know</div>
-    <div class="section-title">Skills & Technologies</div>
-    <div class="section-divider"></div>
-    <div class="skills-grid">
-        <div class="skill-card reveal">
-            <div class="skill-icon">⚙️</div>
-            <div class="skill-title">Backend Development</div>
-            <div class="skill-tags">
-                <span class="tag">Java</span>
-                <span class="tag">Spring Boot</span>
-                <span class="tag">Spring Security</span>
-                <span class="tag">JWT Auth</span>
-                <span class="tag">REST APIs</span>
-                <span class="tag">WebSocket</span>
-                <span class="tag">Hibernate</span>
-                <span class="tag">JPA</span>
-            </div>
-        </div>
-        <div class="skill-card reveal">
-            <div class="skill-icon">🌐</div>
-            <div class="skill-title">Frontend Development</div>
-            <div class="skill-tags">
-                <span class="tag">HTML5</span>
-                <span class="tag">CSS3</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">Leaflet.js</span>
-                <span class="tag">Bootstrap</span>
-                <span class="tag">Responsive Design</span>
-            </div>
-        </div>
-        <div class="skill-card reveal">
-            <div class="skill-icon">🗄️</div>
-            <div class="skill-title">Database & Data</div>
-            <div class="skill-tags">
-                <span class="tag">MySQL</span>
-                <span class="tag">SQL</span>
-                <span class="tag">Flyway Migrations</span>
-                <span class="tag">Database Design</span>
-                <span class="tag">HikariCP</span>
-            </div>
-        </div>
-        <div class="skill-card reveal">
-            <div class="skill-icon">📱</div>
-            <div class="skill-title">Integrations & APIs</div>
-            <div class="skill-tags">
-                <span class="tag">M-Pesa API</span>
-                <span class="tag">Safaricom STK Push</span>
-                <span class="tag">OSRM Routing</span>
-                <span class="tag">OpenStreetMap</span>
-                <span class="tag">GPS / Geolocation</span>
-            </div>
-        </div>
-        <div class="skill-card reveal">
-            <div class="skill-icon">🤖</div>
-            <div class="skill-title">AI & Algorithms</div>
-            <div class="skill-tags">
-                <span class="tag">Prolog</span>
-                <span class="tag">Expert Systems</span>
-                <span class="tag">Haversine Algorithm</span>
-                <span class="tag">C Programming</span>
-                <span class="tag">Sorting Algorithms</span>
-            </div>
-        </div>
-        <div class="skill-card reveal">
-            <div class="skill-icon">🛠️</div>
-            <div class="skill-title">Tools & Practices</div>
-            <div class="skill-tags">
-                <span class="tag">Git & GitHub</span>
-                <span class="tag">IntelliJ IDEA</span>
-                <span class="tag">Maven</span>
-                <span class="tag">Postman</span>
-                <span class="tag">MySQL Workbench</span>
-                <span class="tag">VS Code</span>
-            </div>
-        </div>
+<section id="contact" class="band">
+  <div class="wrap contact">
+    <div class="reveal">
+      <div class="label">Contact</div>
+      <h2>Let's build something reliable.</h2>
+      <p class="lead">I'm open to backend, full-stack and AI engineering roles and internships. Email is the fastest way to reach me.</p>
+      <div class="channels">
+        <a href="mailto:ndungub058@gmail.com"><span>Email</span><span>ndungub058@gmail.com</span></a>
+        <a href="https://www.linkedin.com/in/brian-ndung-u-7a0a31345/"><span>LinkedIn</span><span>brian-ndung-u ↗</span></a>
+        <a href="https://github.com/ray100-art"><span>GitHub</span><span>ray100-art ↗</span></a>
+        <a href="https://wa.me/254110908913"><span>WhatsApp</span><span>+254 110 908 913 ↗</span></a>
+      </div>
     </div>
+    <form class="reveal" id="contact-form" action="https://formspree.io/f/mojkkyqn" method="POST">
+      <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+      <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" required></textarea></div>
+      <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn btn-primary" type="submit" style="align-self:flex-start;cursor:pointer;font:inherit;font-weight:700">Send message</button>
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
 </section>
 
-<!-- Projects -->
-<section id="projects">
-    <div class="section-label">What I've Built</div>
-    <div class="section-title">Featured Projects</div>
-    <div class="section-divider"></div>
-    <div class="projects-grid">
+</main>
 
-        <!-- ParkNairobi — Featured -->
-        <div class="project-card featured reveal">
-            <div class="project-header">
-                <div class="project-num">01</div>
-                <div class="project-type">Full Stack System · Flagship Project</div>
-                <div class="project-title">ParkNairobi — Smart Parking System</div>
-                <div class="project-desc">
-                    A complete, production-grade smart parking management system built for Kenya. Features real-time slot availability tracking with WebSocket live updates, GPS-based nearest slot finder, interactive map with Leaflet.js, M-Pesa STK Push payment integration, turn-by-turn navigation, JWT-secured REST APIs, role-based admin dashboard with sensor simulation, and a heatmap overlay for occupancy visualisation. Built with a Spring Boot backend and a responsive HTML/JS frontend.
-                </div>
-            </div>
-            <div class="project-footer">
-                <div class="project-stack">
-                    <span class="stack-tag">Java</span>
-                    <span class="stack-tag">Spring Boot</span>
-                    <span class="stack-tag">MySQL</span>
-                    <span class="stack-tag">WebSocket</span>
-                    <span class="stack-tag">M-Pesa API</span>
-                    <span class="stack-tag">Leaflet.js</span>
-                    <span class="stack-tag">JWT</span>
-                    <span class="stack-tag">HTML/CSS/JS</span>
-                </div>
-                <a href="https://github.com/ray100-art/Park-Nairobi-Frontend" target="_blank" class="project-link">
-                    View on GitHub →
-                </a>
-            </div>
-        </div>
-
-        <!-- DRIP E-commerce -->
-        <div class="project-card reveal">
-            <div class="project-header">
-                <div class="project-num">02</div>
-                <div class="project-type">Full Stack · E-Commerce</div>
-                <div class="project-title">DRIP — E-Commerce Platform</div>
-                <div class="project-desc">
-                    A full e-commerce platform with a Spring Boot backend and a clean HTML/CSS/JS frontend. Includes product listings, cart management, user authentication, and order processing.
-                </div>
-            </div>
-            <div class="project-footer">
-                <div class="project-stack">
-                    <span class="stack-tag">Java</span>
-                    <span class="stack-tag">Spring Boot</span>
-                    <span class="stack-tag">HTML</span>
-                    <span class="stack-tag">CSS</span>
-                    <span class="stack-tag">JavaScript</span>
-                </div>
-                <a href="https://github.com/ray100-art/DRIP---ECOMMERCE-BACKEND" target="_blank" class="project-link">
-                    View on GitHub →
-                </a>
-            </div>
-        </div>
-
-        <!-- Expert Diagnostic System -->
-        <div class="project-card reveal">
-            <div class="project-header">
-                <div class="project-num">03</div>
-                <div class="project-type">Artificial Intelligence · AI System</div>
-                <div class="project-title">Expert Diagnostic System</div>
-                <div class="project-desc">
-                    An AI-powered expert system built in Prolog that uses rule-based reasoning to diagnose problems. Demonstrates knowledge representation, inference engine design, and logical programming principles.
-                </div>
-            </div>
-            <div class="project-footer">
-                <div class="project-stack">
-                    <span class="stack-tag">Prolog</span>
-                    <span class="stack-tag">AI</span>
-                    <span class="stack-tag">Expert Systems</span>
-                    <span class="stack-tag">Logic Programming</span>
-                </div>
-                <a href="https://github.com/ray100-art/ExpertDiagnosticSystem" target="_blank" class="project-link">
-                    View on GitHub →
-                </a>
-            </div>
-        </div>
-
-        <!-- Selection Sort -->
-        <div class="project-card reveal">
-            <div class="project-header">
-                <div class="project-num">04</div>
-                <div class="project-type">Algorithms · Systems Programming</div>
-                <div class="project-title">Selection Sort Algorithm</div>
-                <div class="project-desc">
-                    A clean implementation of the Selection Sort algorithm in C, demonstrating understanding of low-level memory management, pointers, and fundamental computer science data structures and algorithmic complexity.
-                </div>
-            </div>
-            <div class="project-footer">
-                <div class="project-stack">
-                    <span class="stack-tag">C</span>
-                    <span class="stack-tag">Algorithms</span>
-                    <span class="stack-tag">Data Structures</span>
-                </div>
-                <a href="https://github.com/ray100-art/SelectionSortAlgorithm" target="_blank" class="project-link">
-                    View on GitHub →
-                </a>
-            </div>
-        </div>
-
-        <!-- School Record Management System -->
-        <div class="project-card reveal" style="grid-column:1/-1">
-            <div class="project-header">
-                <div class="project-num">05</div>
-                <div class="project-type">Full Stack System · Education</div>
-                <div class="project-title">School Record Management System</div>
-                <div class="project-desc">
-                    A comprehensive school administration platform built with Java Spring Boot. Manages complete school records including student enrollment, teacher profiles, academic performance tracking, and administrative operations. Features a secure backend API with role-based access control, a MySQL database for persistent data management, and a clean CSS-styled frontend interface for school staff to manage day-to-day operations efficiently.
-                </div>
-            </div>
-            <div class="project-footer">
-                <div class="project-stack">
-                    <span class="stack-tag">Java</span>
-                    <span class="stack-tag">Spring Boot</span>
-                    <span class="stack-tag">MySQL</span>
-                    <span class="stack-tag">REST API</span>
-                    <span class="stack-tag">CSS</span>
-                    <span class="stack-tag">Role-Based Access</span>
-                </div>
-                <a href="https://github.com/ray100-art/SchoolRecordManagementSystem" target="_blank" class="project-link">
-                    View on GitHub →
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Contact -->
-<section id="contact" class="contact-section">
-    <div class="section-label">Get In Touch</div>
-    <div class="section-title">Let's Work Together</div>
-    <div class="section-divider"></div>
-    <div class="contact-grid reveal">
-        <div class="contact-info">
-            <p>
-                I'm open to new opportunities, collaborations, and interesting projects. Whether you have a job offer, a project idea, or just want to connect — my inbox is always open.
-            </p>
-            <a href="mailto:ndungub058@gmail.com" class="contact-item" style="text-decoration:none">
-                <div class="contact-dot"></div>
-                <div>
-                    <div class="contact-label">Email</div>
-                    <div class="contact-val" style="color:var(--gold)">ndungub058@gmail.com ↗</div>
-                </div>
-            </a>
-            <div class="contact-item">
-                <div class="contact-dot"></div>
-                <div>
-                    <div class="contact-label">Location</div>
-                    <div class="contact-val">Nairobi, Kenya</div>
-                </div>
-            </div>
-            <a href="https://wa.me/254110908913" target="_blank" class="contact-item" style="text-decoration:none">
-                <div class="contact-dot"></div>
-                <div>
-                    <div class="contact-label">Phone / WhatsApp</div>
-                    <div class="contact-val" style="color:var(--gold)">+254 110 908 913 ↗</div>
-                </div>
-            </a>
-            <a href="https://github.com/ray100-art" target="_blank" class="contact-item" style="text-decoration:none">
-                <div class="contact-dot"></div>
-                <div>
-                    <div class="contact-label">GitHub</div>
-                    <div class="contact-val" style="color:var(--gold)">github.com/ray100-art ↗</div>
-                </div>
-            </a>
-            <div class="social-links">
-                <a href="https://github.com/ray100-art" target="_blank" class="social-link" title="GitHub">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                </a>
-                <a href="mailto:ndungub058@gmail.com" class="social-link" title="Email">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                </a>
-                <a href="https://wa.me/254110908913" target="_blank" class="social-link" title="WhatsApp">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                </a>
-            </div>
-        </div>
-        <form class="contact-form" action="https://formspree.io/f/mojkkyqn" method="POST">
-            <div class="form-row">
-                <div class="form-group">
-                    <label>Your Name</label>
-                    <input type="text" name="name" placeholder="John Doe" required>
-                </div>
-                <div class="form-group">
-                    <label>Your Email</label>
-                    <input type="email" name="email" placeholder="john@example.com" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Subject</label>
-                <input type="text" name="subject" placeholder="Project Collaboration" required>
-            </div>
-            <div class="form-group">
-                <label>Message</label>
-                <textarea rows="6" name="message" placeholder="Tell me about your project or opportunity..." required></textarea>
-            </div>
-            <button type="submit" class="btn-primary" id="submitBtn" style="width:100%;justify-content:center;display:flex;padding:15px">
-                <span>Send Message</span>
-            </button>
-        </form>
-    </div>
-</section>
-
-<!-- Footer -->
 <footer>
-    <div class="footer-copy">© 2026 <span>Brian Ndung'u</span>. All rights reserved.</div>
-    <a href="#home" class="footer-back">↑ Back to top</a>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Brian Ndung'u</span>
+    <span>Hand-built HTML, CSS &amp; JS · <a href="https://github.com/ray100-art/ray100-art.github.io">source ↗</a></span>
+  </div>
 </footer>
 
 <script>
+(function () {
+  var nav = document.querySelector('.nav');
+  var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
+  var btn = document.querySelector('.menu-btn'), links = document.getElementById('nav-links');
+  btn.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  links.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { links.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+  });
 
-    // Navbar scroll effect
-    window.addEventListener('scroll', function() {
-        var nav = document.getElementById('navbar');
-        nav.classList.toggle('scrolled', window.scrollY > 50);
-        // Active nav link
-        var sections = document.querySelectorAll('section[id]');
-        var links    = document.querySelectorAll('.nav-links a');
-        var current  = '';
-        sections.forEach(function(s) {
-            if (window.scrollY >= s.offsetTop - 120) current = s.id;
-        });
-        links.forEach(function(a) {
-            a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-        });
-    });
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Scroll reveal
-    var revealEls = document.querySelectorAll('.reveal');
-    var observer  = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold:0.1 });
-    revealEls.forEach(function(el) { observer.observe(el); });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+  }
 
-    // Handle form submission feedback
-    var form = document.querySelector('.contact-form');
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            var btn = document.getElementById('submitBtn');
-            btn.querySelector('span').textContent = 'Sending...';
-            btn.style.opacity = '0.8';
-            btn.style.pointerEvents = 'none';
-
-            // Re-enable after submission
-            setTimeout(function() {
-                btn.querySelector('span').textContent = '✓ Message Sent!';
-                btn.style.background = '#22c55e';
-                btn.style.opacity = '1';
-                setTimeout(function() {
-                    btn.querySelector('span').textContent = 'Send Message';
-                    btn.style.background = '';
-                    btn.style.pointerEvents = '';
-                }, 3000);
-            }, 1500);
-        });
-    }
+  // Contact form: report the real outcome, never a fake success.
+  var form = document.getElementById('contact-form'), status = document.getElementById('form-status');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var submit = form.querySelector('button[type=submit]');
+    submit.disabled = true; status.className = 'form-status'; status.textContent = 'Sending…';
+    fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+      .then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        form.reset(); status.className = 'form-status ok';
+        status.textContent = 'Thanks, your message was sent. I will reply by email.';
+      })
+      .catch(function () {
+        status.className = 'form-status err';
+        status.innerHTML = 'The message could not be sent. Please email <a href="mailto:ndungub058@gmail.com" style="text-decoration:underline">ndungub058@gmail.com</a> directly.';
+      })
+      .then(function () { submit.disabled = false; });
+  });
+})();
 </script>
 </body>
 </html>
